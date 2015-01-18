@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 ## Loading and preprocessing the data
 
@@ -41,7 +46,7 @@ hist(steps_by_date$total,
      ylab = "Frequency")
 ```
 
-![](./PA1_template_files/figure-html/mean_total_steps_plot-1.png) 
+![plot of chunk mean_total_steps_plot](figure/mean_total_steps_plot-1.png) 
 
 ## What is the average daily activity pattern?
 
@@ -66,7 +71,7 @@ plot(steps_by_interval$interval,
      ylab = "Average Steps")
 ```
 
-![](./PA1_template_files/figure-html/average_daily_plot-1.png) 
+![plot of chunk average_daily_plot](figure/average_daily_plot-1.png) 
 
 ## Imputing missing values
 
@@ -104,7 +109,7 @@ hist(steps_by_date_imputed$total,
      ylab = "Frequency")
 ```
 
-![](./PA1_template_files/figure-html/imputting_values_plot-1.png) 
+![plot of chunk imputting_values_plot](figure/imputting_values_plot-1.png) 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -137,4 +142,4 @@ qplot(interval,
       ylab = "Average Steps")   
 ```
 
-![](./PA1_template_files/figure-html/weekday_weekends-1.png) 
+![plot of chunk weekday_weekends](figure/weekday_weekends-1.png) 

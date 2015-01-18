@@ -38,11 +38,10 @@ The **mean** and **median** total number of steps takes per day were **`r mean_s
 **`r median_step_per_day`** respectively.
 
 ```{r mean_total_steps_plot}
-barplot(steps_by_date$total, 
-        names.arg = steps_by_date$date, 
-        main = "Totals Steps per Day",
-        xlab = "Day",
-        ylab = "Steps")
+hist(steps_by_date$total,
+     main = "Totals Steps per Day Distribution",
+     xlab = "Total Steps",
+     ylab = "Frequency")
 ```
 
 ## What is the average daily activity pattern?
@@ -68,7 +67,7 @@ plot(steps_by_interval$interval,
 
 ## Imputing missing values
 
-```{r missing_values}
+```{r imputting_values}
 num_of_nas <- sum(is.na(df$steps))
 df_imputed <- df
 
@@ -93,12 +92,11 @@ the average number of steps over all days for the associated interval was substi
 **`r median_step_per_day_imputed`** respectively. These values are the close to the data with missing values, because we replaced
 them with the average for that interval.
 
-```{r missing_values_plot}
-barplot(steps_by_date_imputed$total,
-        names.arg = steps_by_date_imputed$date, 
-        main = "Totals Steps per Day with Missing Values Replaced",
-        xlab = "Day",
-        ylab = "Steps")
+```{r imputting_values_plot}
+hist(steps_by_date_imputed$total,
+     main = "Totals Steps per Day Distribution",
+     xlab = "Total Steps",
+     ylab = "Frequency")
 ```
 
 ## Are there differences in activity patterns between weekdays and weekends?

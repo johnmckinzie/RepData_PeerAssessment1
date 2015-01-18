@@ -1,9 +1,4 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 
 ## Loading and preprocessing the data
 
@@ -40,14 +35,13 @@ The **mean** and **median** total number of steps takes per day were **10766** a
 
 
 ```r
-barplot(steps_by_date$total, 
-        names.arg = steps_by_date$date, 
-        main = "Totals Steps per Day",
-        xlab = "Day",
-        ylab = "Steps")
+hist(steps_by_date$total,
+     main = "Totals Steps per Day Distribution",
+     xlab = "Total Steps",
+     ylab = "Frequency")
 ```
 
-![plot of chunk mean_total_steps_plot](figure/mean_total_steps_plot-1.png) 
+![](./PA1_template_files/figure-html/mean_total_steps_plot-1.png) 
 
 ## What is the average daily activity pattern?
 
@@ -72,7 +66,7 @@ plot(steps_by_interval$interval,
      ylab = "Average Steps")
 ```
 
-![plot of chunk average_daily_plot](figure/average_daily_plot-1.png) 
+![](./PA1_template_files/figure-html/average_daily_plot-1.png) 
 
 ## Imputing missing values
 
@@ -104,14 +98,13 @@ them with the average for that interval.
 
 
 ```r
-barplot(steps_by_date_imputed$total,
-        names.arg = steps_by_date_imputed$date, 
-        main = "Totals Steps per Day with Missing Values Replaced",
-        xlab = "Day",
-        ylab = "Steps")
+hist(steps_by_date_imputed$total,
+     main = "Totals Steps per Day Distribution",
+     xlab = "Total Steps",
+     ylab = "Frequency")
 ```
 
-![plot of chunk missing_values_plot](figure/missing_values_plot-1.png) 
+![](./PA1_template_files/figure-html/imputting_values_plot-1.png) 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -144,4 +137,4 @@ qplot(interval,
       ylab = "Average Steps")   
 ```
 
-![plot of chunk weekday_weekends](figure/weekday_weekends-1.png) 
+![](./PA1_template_files/figure-html/weekday_weekends-1.png) 
